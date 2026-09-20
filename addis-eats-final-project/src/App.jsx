@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
 import Home from "./pages/Home";
 import Menu from "./pages/Menu";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 import DishDetail from "./pages/DishDetail";
 import Cart from "./pages/Cart";
 import Login from "./pages/Login";
@@ -57,6 +59,12 @@ export function App() {
                       </ErrorBoundary>
                     }
                   />
+
+                  {/* About Page */}
+                  <Route path="about" element={<About />} />
+
+                  {/* Contact Page */}
+                  <Route path="contact" element={<Contact />} />
 
                   {/* Dynamic Dish Detail */}
                   <Route path="menu/:id" element={<DishDetail />} />

@@ -1,11 +1,14 @@
 import { useParams, Link } from "react-router-dom";
+import { CheckCircle2 } from "lucide-react";
 
 export function OrderConfirmation() {
   const { id } = useParams();
 
   return (
     <section className="status" role="region" aria-label="Order confirmation">
-      <div style={{ fontSize: "3rem", marginBottom: "12px" }}>🎉</div>
+      <div style={{ display: "grid", placeItems: "center", marginBottom: "12px", color: "#24734d" }}>
+        <CheckCircle2 size={54} aria-hidden="true" />
+      </div>
       <h2>Order Successfully Placed!</h2>
       <p style={{ fontSize: "1.1rem", color: "#16232c", fontWeight: 700 }}>
         Order Reference: <span style={{ color: "#ed713f" }}>{id}</span>

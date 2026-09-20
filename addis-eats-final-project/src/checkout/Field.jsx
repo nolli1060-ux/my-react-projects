@@ -1,3 +1,5 @@
+import { AlertCircle } from "lucide-react";
+
 export function Field({ label, id, error, children }) {
   const describedBy = error ? `${id}-error` : undefined;
 
@@ -13,7 +15,7 @@ export function Field({ label, id, error, children }) {
         : children}
       {error && (
         <p id={`${id}-error`} className="field-error" role="alert">
-          <span aria-hidden="true">⚠️</span>
+          <AlertCircle size={14} aria-hidden="true" />
           <span>{error}</span>
         </p>
       )}

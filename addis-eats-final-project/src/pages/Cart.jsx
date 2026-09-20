@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ArrowLeft, ArrowRight, Trash2 } from "lucide-react";
 import { useCart } from "../cart/useCart";
 
 export function Cart() {
@@ -11,7 +12,7 @@ export function Cart() {
         <h2>Your order is empty</h2>
         <p>You haven't added any Ethiopian delicacies to your order yet.</p>
         <Link to="/menu" className="primary-link">
-          Browse Menu Now →
+          Browse Menu Now
         </Link>
       </section>
     );
@@ -32,7 +33,8 @@ export function Cart() {
           onClick={clear}
           title="Remove all items from your order"
         >
-          Clear entire cart
+          <Trash2 size={14} aria-hidden="true" style={{ display: "inline", verticalAlign: "middle", marginRight: "4px" }} />
+          <span>Clear entire cart</span>
         </button>
       </div>
 
@@ -51,7 +53,7 @@ export function Cart() {
                   <div className="cart-item-details">
                     <strong>{dish.name}</strong>
                     <span>
-                      {dish.category} • {dish.price} ETB each
+                      {dish.category} | {dish.price} ETB each
                     </span>
                   </div>
                 </div>
@@ -102,10 +104,12 @@ export function Cart() {
 
         <div className="cart-buttons">
           <Link to="/menu" className="secondary-link">
-            ← Add more dishes
+            <ArrowLeft size={16} aria-hidden="true" />
+            <span>Add more dishes</span>
           </Link>
           <Link to="/checkout" className="primary-link">
-            Proceed to Checkout →
+            <span>Proceed to Checkout</span>
+            <ArrowRight size={16} aria-hidden="true" />
           </Link>
         </div>
       </div>

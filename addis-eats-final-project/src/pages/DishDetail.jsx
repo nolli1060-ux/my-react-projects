@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import { Flame, Check, ArrowLeft } from "lucide-react";
 import { useFetch } from "../hooks/useFetch";
 import { useCart } from "../cart/useCart";
 
@@ -42,7 +43,7 @@ export function DishDetail() {
           the link is incorrect.
         </p>
         <Link to="/menu" className="primary-link">
-          ← Back to Menu
+          Back to Menu
         </Link>
       </section>
     );
@@ -57,7 +58,8 @@ export function DishDetail() {
   return (
     <div className="detail-container">
       <Link to="/menu" className="back-link">
-        ← Back to full menu
+        <ArrowLeft size={16} aria-hidden="true" />
+        <span>Back to full menu</span>
       </Link>
 
       <section className="detail-section">
@@ -69,7 +71,9 @@ export function DishDetail() {
           <div className="detail-tags">
             <span className="detail-tag">{dish.category}</span>
             {dish.spicy ? (
-              <span className="detail-tag spicy">Spicy 🌶️</span>
+              <span className="detail-tag spicy">
+                <Flame size={12} aria-hidden="true" /> Spicy
+              </span>
             ) : (
               <span className="detail-tag">Mild</span>
             )}
@@ -109,9 +113,13 @@ export function DishDetail() {
               className={added ? "primary-btn btn-added" : "primary-btn"}
               onClick={handleAddToCart}
             >
-              {added
-                ? `✓ Added ${quantity} to order!`
-                : `Add to order (${dish.price * quantity} ETB)`}
+              {added ? (
+                <>
+                  <Check size={16} aria-hidden="true" /> Added {quantity} to order!
+                </>
+              ) : (
+                `Add to order (${dish.price * quantity} ETB)`
+              )}
             </button>
             <Link to="/cart" className="secondary-link">
               Go to Cart

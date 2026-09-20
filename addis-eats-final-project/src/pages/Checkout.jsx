@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { AlertCircle, CreditCard } from "lucide-react";
 import { useCart } from "../cart/useCart";
 import { useAuth } from "../auth/useAuth";
 import Field from "../checkout/Field";
@@ -95,7 +96,7 @@ export function Checkout() {
         <h2>Your order is empty</h2>
         <p>You cannot checkout with an empty cart. Please add dishes from our menu first.</p>
         <Link to="/menu" className="primary-link">
-          Browse Menu Now →
+          Browse Menu Now
         </Link>
       </section>
     );
@@ -124,7 +125,12 @@ export function Checkout() {
               aria-labelledby="summary-alert-title"
             >
               <p id="summary-alert-title">
-                ⚠️ Please correct the following {Object.keys(errors).length}{" "}
+                <AlertCircle
+                  size={18}
+                  aria-hidden="true"
+                  style={{ display: "inline", verticalAlign: "middle", marginRight: "6px" }}
+                />
+                Please correct the following {Object.keys(errors).length}{" "}
                 {Object.keys(errors).length === 1 ? "field" : "fields"} before
                 proceeding:
               </p>
@@ -224,7 +230,8 @@ export function Checkout() {
 
             {serverError && (
               <p className="field-error" role="alert" style={{ marginBottom: "16px" }}>
-                <span>⚠️</span> {serverError}
+                <AlertCircle size={14} aria-hidden="true" />
+                <span>{serverError}</span>
               </p>
             )}
 
@@ -262,7 +269,12 @@ export function Checkout() {
 
           <div style={{ background: "#f7f9fa", padding: "14px", borderRadius: "10px", fontSize: "0.85rem", color: "#687780" }}>
             <p style={{ margin: "0 0 6px", fontWeight: 700, color: "#16232c" }}>
-              💳 Payment on Delivery
+              <CreditCard
+                size={16}
+                aria-hidden="true"
+                style={{ display: "inline", verticalAlign: "middle", marginRight: "6px" }}
+              />
+              Payment on Delivery
             </p>
             <p style={{ margin: 0 }}>
               Payment is accepted via TeleBirr, CBE Birr, or cash when your hot food arrives at your door.

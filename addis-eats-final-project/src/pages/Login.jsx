@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { AlertCircle } from "lucide-react";
 import { useAuth } from "../auth/useAuth";
 
 export function Login() {
@@ -50,7 +51,8 @@ export function Login() {
           />
           {error && (
             <p className="field-error" role="alert">
-              <span>⚠️</span> {error}
+              <AlertCircle size={14} aria-hidden="true" />
+              <span>{error}</span>
             </p>
           )}
         </div>
@@ -60,7 +62,7 @@ export function Login() {
           className="primary-btn"
           style={{ width: "100%", padding: "12px", marginTop: "12px" }}
         >
-          Continue to Checkout →
+          Continue to Checkout
         </button>
       </form>
     </section>

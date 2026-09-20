@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Flame, Check } from "lucide-react";
 
 export function DishCard({ dish, onAddToCart, onQuickView }) {
   const [triggerError, setTriggerError] = useState(false);
@@ -20,7 +21,9 @@ export function DishCard({ dish, onAddToCart, onQuickView }) {
       <div className="dish-image-wrapper">
         <img src={dish.image} alt={dish.name} className="dish-image" loading="lazy" />
         {dish.spicy ? (
-          <span className="dish-badge spicy">Spicy 🌶️</span>
+          <span className="dish-badge spicy">
+            <Flame size={12} aria-hidden="true" /> Spicy
+          </span>
         ) : (
           <span className="dish-badge">Mild</span>
         )}
@@ -45,7 +48,13 @@ export function DishCard({ dish, onAddToCart, onQuickView }) {
           onClick={handleAdd}
           aria-label={`Add ${dish.name} to cart`}
         >
-          {added ? "✓ Added" : "Add to order"}
+          {added ? (
+            <>
+              <Check size={14} aria-hidden="true" /> Added
+            </>
+          ) : (
+            "Add to order"
+          )}
         </button>
         <button
           type="button"

@@ -1,4 +1,5 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
+import { UtensilsCrossed, ShoppingCart, User, MapPin, Phone, Mail } from "lucide-react";
 import { useCart } from "./cart/useCart";
 import { useAuth } from "./auth/useAuth";
 
@@ -12,7 +13,7 @@ function Header() {
         <Link to="/" className="brand-link">
           <div className="brand-row">
             <div className="brand-icon" aria-hidden="true">
-              🥘
+              <UtensilsCrossed size={22} />
             </div>
             <div>
               <h1>Addis Eats</h1>
@@ -25,7 +26,8 @@ function Header() {
 
         <Link to="/cart" className="cart-badge-link" aria-label={`Cart with ${itemCount} items`}>
           <div className="cart-badge">
-            <span>🛒 Order</span>
+            <ShoppingCart size={16} aria-hidden="true" />
+            <span>Order</span>
             <span className="cart-count">{itemCount}</span>
           </div>
         </Link>
@@ -46,6 +48,18 @@ function Header() {
           Menu
         </NavLink>
         <NavLink
+          to="/about"
+          className={({ isActive }) => (isActive ? "on" : "")}
+        >
+          About
+        </NavLink>
+        <NavLink
+          to="/contact"
+          className={({ isActive }) => (isActive ? "on" : "")}
+        >
+          Contact
+        </NavLink>
+        <NavLink
           to="/cart"
           className={({ isActive }) => (isActive ? "on" : "")}
         >
@@ -61,7 +75,9 @@ function Header() {
         <div className="nav-user">
           {user ? (
             <>
-              <span>👤 {user.phone}</span>
+              <span className="user-label">
+                <User size={14} aria-hidden="true" /> {user.phone}
+              </span>
               <button
                 type="button"
                 className="btn-signout"
@@ -90,9 +106,37 @@ export function Layout() {
     <main>
       <Header />
       <Outlet />
-      <footer>
-        <div>© {new Date().getFullYear()} Addis Eats — Bringing traditional flavours to your table.</div>
-        <div>Addis Ababa, Ethiopia • TeleBirr & Cash on Delivery</div>
+      <footer className="footer">
+        <div className="footer-links">
+          <div className="footer-brand">
+            <strong>Addis Eats</strong>
+            <p>Bringing traditional Ethiopian dining and hospitality directly to your door.</p>
+          </div>
+          <div className="footer-nav">
+            <h4>Quick Links</h4>
+            <Link to="/">Home</Link>
+            <Link to="/menu">Menu</Link>
+            <Link to="/about">About Us</Link>
+            <Link to="/contact">Contact</Link>
+            <Link to="/cart">My Cart</Link>
+          </div>
+          <div className="footer-contact">
+            <h4>Delivery Info</h4>
+            <p>
+              <MapPin size={14} aria-hidden="true" /> Addis Ababa, Ethiopia
+            </p>
+            <p>
+              <Phone size={14} aria-hidden="true" /> +251 911 234 567
+            </p>
+            <p>
+              <Mail size={14} aria-hidden="true" /> support@addiseats.et
+            </p>
+          </div>
+        </div>
+        <div className="footer-bottom">
+          <div>© {new Date().getFullYear()} Addis Eats. All rights reserved.</div>
+          <div>Accepting TeleBirr, CBE Birr & Cash on Delivery.</div>
+        </div>
       </footer>
     </main>
   );

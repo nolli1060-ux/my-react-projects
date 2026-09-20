@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 import { useFetch } from "../hooks/useFetch";
 import { useCart } from "../cart/useCart";
 import DishCard from "../menu/DishCard";
@@ -24,7 +25,8 @@ export function Home() {
           </p>
           <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
             <Link to="/menu" className="primary-link">
-              Browse Full Menu →
+              <span>Browse Full Menu</span>
+              <ArrowRight size={16} aria-hidden="true" />
             </Link>
             <Link to="/cart" className="secondary-link">
               View Your Cart

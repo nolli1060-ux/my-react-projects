@@ -3,12 +3,7 @@ import { Link } from "react-router-dom";
 import { Flame, Check } from "lucide-react";
 
 export function DishCard({ dish, onAddToCart, onQuickView }) {
-  const [triggerError, setTriggerError] = useState(false);
   const [added, setAdded] = useState(false);
-
-  if (triggerError) {
-    throw new Error(`Deliberate render error in ${dish.name} (testing Error Boundary)`);
-  }
 
   function handleAdd() {
     onAddToCart(dish);
@@ -67,17 +62,6 @@ export function DishCard({ dish, onAddToCart, onQuickView }) {
         <Link to={`/menu/${dish.id}`} className="btn-detail" title="View full details">
           Details
         </Link>
-        {dish.id === 1 && (
-          <button
-            type="button"
-            className="btn-detail"
-            style={{ fontSize: "0.75rem", padding: "6px 8px", color: "#c53d32" }}
-            onClick={() => setTriggerError(true)}
-            title="Demonstrate ErrorBoundary handling"
-          >
-            Test Error
-          </button>
-        )}
       </div>
     </article>
   );

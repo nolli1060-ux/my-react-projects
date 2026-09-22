@@ -1,6 +1,6 @@
 # Addis Eats
 
-A React food-ordering mini-project for the Day 35 React requirements.
+A React food-ordering mini-project.
 
 ## Run locally
 

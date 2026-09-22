@@ -1,0 +1,66 @@
+[
+  {
+    "id": "1",
+    "name": "Doro Wot",
+    "category": "Main",
+    "price": 4000,
+    "description": "Slow-cooked chicken with berbere, onions, butter and a boiled egg, served with injera.",
+    "image": "https://eggs.ca/wp-content/uploads/2024/06/EFC-doro-wat-hero-1280x720-1.jpg"
+  },
+  {
+    "id": "2",
+    "name": "Shekla Tibs",
+    "category": "Main",
+    "price": 3500,
+    "description": "Tender beef sautéed with onions, peppers and herbs, served with fresh injera.",
+    "image": "https://cultureatz.com/wp-content/uploads/2019/01/Shekla-tibs.jpg"
+  },
+  {
+    "id": "3",
+    "name": "Tegabino",
+    "category": "Vegetarian",
+    "price": 300,
+    "description": "Smooth chickpea stew seasoned with Ethiopian spices and served with injera.",
+    "image": "https://www.mesob.ca/assets/popular-dishes/shiro-tegabino-winnipeg.webp"
+  },
+  {
+    "id": "4",
+    "name": "Salad",
+    "category": "Vegetarian",
+    "price": 350,
+    "description": "A fresh mix of crisp vegetables, lightly seasoned and served as a refreshing and healthy side dish.",
+    "image": "https://images.squarespace-cdn.com/content/v1/51c325ece4b01f1752ee3259/1593750295688-APZKLRFLFONUHBZY308I/DSC00235.jpg"
+  },
+  {
+    "id": "5",
+    "name": "Kitfo",
+    "category": "Main",
+    "price": 4000,
+    "description": "Seasoned minced beef prepared with Ethiopian butter and mitmita.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdp1jbbm79mqT6lpXkQf2xJFZaFJE-Yne0zvdbJfqhrOMqGqo2r1UpGT6d&s=10"
+  },
+  {
+    "id": "6",
+    "name": "Firfir",
+    "category": "Vegetarian",
+    "price": 200,
+    "description": "Torn injera mixed with berbere sauce and seasoned butter.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEOc1vFPTDaJXo2DkuoG3D5bkf0wCJkdD_iT81nx_bBOEUHgB1rXdlTy4&s=10"
+  },
+  {
+    "id": "7",
+    "name": "Ful",
+    "category": "Vegetarian",
+    "price": 160,
+    "description": "Warm seasoned fava beans topped with fresh vegetables and olive oil.",
+    "image": "https://media-cdn2.greatbritishchefs.com/media/ghrh40zw/img75687.whqc_475x317q80.jpg"
+  },
+  {
+    "id": "8",
+    "name": "Ertib",
+    "category": "Vegetarian",
+    "price": 260,
+    "description": "A tasty potato sandwich made with seasoned potatoes, crispy bread, and flavorful spices. Simple, filling, and delicious",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9XL7-xAbTi-AHoVFK1BNcWqeQyXTpZfp11zJHIwwPUc_OrmHPFDcA6via&s=10"
+  }
+]
